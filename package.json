@@ -1,0 +1,45 @@
+{
+  "name": "file-cloud-aws-uploader",
+  "version": "0.0.1",
+  "description": "aws file uploader for file cloud",
+  "author": {
+    "name": "calidion",
+    "email": "calidion@gmail.com",
+    "url": "blog.3gcnbeta.com"
+  },
+  "repository": "calidion/file-cloud-aws-uploader",
+  "license": "MIT",
+  "files": [
+    "index.js",
+    "cli.js"
+  ],
+  "keywords": [
+    "file-cloud-aws-uploader",
+    "aws",
+    "file",
+    "cloud",
+    "uploader"
+  ],
+  "dependencies": {
+    "aws-sdk": "^2.2.2",
+    "file-hash": "0.0.5",
+    "meow": "^3.1.0"
+  },
+  "devDependencies": {
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-jshint": "^0.11.0",
+    "grunt-contrib-nodeunit": "^0.4.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-mocha-cli": "^1.12.0",
+    "jshint-stylish": "^1.0.1",
+    "load-grunt-tasks": "^3.1.0",
+    "time-grunt": "^1.1.0",
+    "validator": "^4.0.5"
+  },
+  "scripts": {
+    "test": "grunt"
+  },
+  "bin": {
+    "file-cloud-aws-uploader": "cli.js"
+  }
+}
