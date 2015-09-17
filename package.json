@@ -1,13 +1,13 @@
 {
   "name": "file-cloud-aws-uploader",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "aws file uploader for file cloud",
   "author": {
     "name": "calidion",
     "email": "calidion@gmail.com",
     "url": "blog.3gcnbeta.com"
   },
-  "repository": "calidion/file-cloud-aws-uploader",
+  "repository": "file-cloud/file-cloud-aws-uploader",
   "license": "MIT",
   "files": [
     "index.js",
@@ -40,6 +40,6 @@
     "test": "grunt"
   },
   "bin": {
-    "file-cloud-aws-uploader": "cli.js"
+    "faws3": "cli.js"
   }
 }
