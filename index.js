@@ -19,17 +19,22 @@ module.exports = function (next, filename, awsConf, type, upper) {
         endpoint: endpoint
       };
 
+      if (awsConf.region) {
+        config.region = awsConf.region;
+      }
+
       AWS.config.update(config);
       var s3 = new AWS.S3({
         params: {
           Bucket: awsConf.Bucket,
           Key: hashNamedFile
-        }
+        },
+        signatureVersion: 'v4'
       });
       s3.upload({
         Body: body
       })
-        .on('httpUploadProgress', awsConf.progress || function() {})
+        .on('httpUploadProgress', awsConf.progress || function () {})
         .send(next);
     },
     filename,

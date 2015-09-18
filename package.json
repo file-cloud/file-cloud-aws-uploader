@@ -1,6 +1,6 @@
 {
   "name": "file-cloud-aws-uploader",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "aws file uploader for file cloud",
   "author": {
     "name": "calidion",

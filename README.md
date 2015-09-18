@@ -50,6 +50,8 @@ $ faws3 a.jpg aws.json --type md5 --case upper
 ```
 
 ## aws.json Format
+
+### General Configure
 ```js
 //aws.json formate
 {
@@ -57,6 +59,23 @@ $ faws3 a.jpg aws.json --type md5 --case upper
   "secretAccessKey": "YOUR_SECRET",
   "endpoint": "s3-cn-northeast-1.amazonaws.com.cn",
   "Bucket": "subdomain.xxx.com"
+}
+```
+### Beijing China
+Must additionally add:
+```js
+  "endpoint": "s3.cn-north-1.amazonaws.com.cn",
+  "region": "cn-north-1"
+```
+That is:
+```js
+{
+  "accessKeyId": "YOUR_ID",
+  "secretAccessKey": "YOUR_SECRET",
+  "endpoint": "s3.cn-north-1.amazonaws.com.cn",
+  "Bucket": "subdomain.xxx.com",
+  "endpoint": "s3.cn-north-1.amazonaws.com.cn",
+  "region": "cn-north-1"
 }
 ```
 
