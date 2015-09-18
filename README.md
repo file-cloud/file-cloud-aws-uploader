@@ -21,6 +21,7 @@ var config = {
   secretAccessKey: process.env.AWS_S3_ACCESS_KEY_SECRET,
   endpoint: process.env.AWS_S3_ENDPOINT,
   Bucket: process.env.AWS_S3_BUCKET,
+  region: 'ap-northeast-1',
   progress: function (/*evt*/) {
     called = true;
   }
@@ -58,7 +59,9 @@ $ faws3 a.jpg aws.json --type md5 --case upper
   "accessKeyId": "YOUR_ID",
   "secretAccessKey": "YOUR_SECRET",
   "endpoint": "s3-cn-northeast-1.amazonaws.com.cn",
-  "Bucket": "subdomain.xxx.com"
+  "Bucket": "subdomain.xxx.com",
+  "region": "ap-northeast-1",
+
 }
 ```
 ### Beijing China
