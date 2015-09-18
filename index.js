@@ -35,7 +35,9 @@ module.exports = function (next, filename, awsConf, type, upper) {
         Body: body
       })
         .on('httpUploadProgress', awsConf.progress || function () {})
-        .send(next);
+        .send(function(error, data) {
+          next(error, hashNamedFile, data);
+        });
     },
     filename,
     type,

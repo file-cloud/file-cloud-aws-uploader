@@ -13,14 +13,14 @@ describe('file-cloud-aws-uploader node module', function () {
       secretAccessKey: process.env.AWS_S3_ACCESS_KEY_SECRET,
       endpoint: process.env.AWS_S3_ENDPOINT,
       Bucket: process.env.AWS_S3_BUCKET,
-      region: 'ap-northeast-1',
+      region: process.env.AWS_S3_REGION,
       progress: function (/*evt*/) {
         called = true;
       }
     };
-    fileCloudAwsUploader(function (error, data) {
-      console.log(error, data);
+    fileCloudAwsUploader(function (error, hashNamedFile, data) {
       assert.equal(true, !error);
+      assert.equal(true, typeof hashNamedFile === 'string');
       assert.equal(true, validator.isHexadecimal(data.ETag.replace(/\"/g, "")));
       assert.equal(true, validator.isURL(data.Location));
       assert.equal(true, called);

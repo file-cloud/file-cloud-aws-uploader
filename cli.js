@@ -18,10 +18,11 @@ var cli = meow({
 var conf = JSON.parse(String(fs.readFileSync(path.resolve(process.env.PWD, cli.input[1]))));
 
 if (cli.input[0] && cli.input[1]) {
-  fileCloudAwsUploader(function (error, data) {
+  fileCloudAwsUploader(function (error, hashNamedFile, data) {
       if (error) {
         console.log('Errors Occur:' + error);
       } else {
+        console.log('Hashed Filename: ' + hashNamedFile);
         console.log('ETag: ' + data.ETag);
         console.log('Location: ' + data.Location);
       }
